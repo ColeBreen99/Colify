@@ -1,0 +1,601 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Disable both horizontal and vertical scroll */
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+/* Search Bar Header Element */
+.input {
+    max-width: 190px;
+  }
+  
+  .label {
+    display: block;
+    position: absolute;
+    left: 50%; /* Horizontal center */
+    transform: translate(-50%, -94%); /* Offset by 50% of width and height to truly center */
+    width: 280px;
+    border-radius: 10px;
+    border: 2px solid #5e5757;
+    padding: 15px 8px 15px 10px;
+    text-align: left;
+    box-shadow: 
+      20px 20px 60px #3853c7, 
+      -20px -20px 60px #19ad88;
+  }
+  
+  .shortcut {
+    position: absolute;
+    top: 50%;
+    right: -3%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    color: #c5c5c5;
+    background-color: #5e5757;
+    padding: 0.3em;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search_bar {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: rgb(111, 115, 119);
+  }
+
+  /* Logo header element */
+  .logo {
+    width: 3vw;
+    height: 5vh;
+  }
+
+  /* Fancy Button Header element */
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    overflow: hidden;
+    height: 3rem;
+    background-size: 300% 300%;
+    cursor: pointer;
+    position: absolute;
+    left: 88%;
+    top: 0.6%;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#212121, #212121),
+      linear-gradient(
+        137.48deg,
+        #ffdb3b 10%,
+        #fe53bb 45%,
+        #8f51ea 67%,
+        #0044ff 87%
+      );
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+  
+  #container-stars {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+  }
+  
+  strong {
+    z-index: 2;
+    font-family: "Avalors Personal Use";
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-shadow: 0 0 4px white;
+  }
+  
+  #glow {
+    position: absolute;
+    display: flex;
+    width: 12rem;
+  }
+  
+  .circle {
+    width: 100%;
+    height: 30px;
+    filter: blur(2rem);
+    animation: pulse_3011 4s infinite;
+    z-index: -1;
+  }
+  
+  .circle:nth-of-type(1) {
+    background: rgba(254, 83, 186, 0.636);
+  }
+  
+  .circle:nth-of-type(2) {
+    background: rgba(142, 81, 234, 0.704);
+  }
+  
+  .btn:hover #container-stars {
+    z-index: 1;
+    background-color: #212121;
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .btn:active {
+    border: double 4px #fe53bb;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: none;
+  }
+  
+  .btn:active .circle {
+    background: #fe53bb;
+  }
+  
+  #stars {
+    position: relative;
+    background: transparent;
+    width: 200rem;
+    height: 200rem;
+  }
+  
+  #stars::after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: -100rem;
+    width: 100%;
+    height: 100%;
+    animation: animStarRotate 90s linear infinite;
+  }
+  
+  #stars::after {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+  }
+  
+  #stars::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 170%;
+    height: 500%;
+    animation: animStar 60s linear infinite;
+  }
+  
+  #stars::before {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+    opacity: 0.5;
+  }
+  
+  @keyframes animStar {
+    from {
+      transform: translateY(0);
+    }
+  
+    to {
+      transform: translateY(-135rem);
+    }
+  }
+  
+  @keyframes animStarRotate {
+    from {
+      transform: rotate(360deg);
+    }
+  
+    to {
+      transform: rotate(0);
+    }
+  }
+  
+  @keyframes gradient_301 {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes pulse_3011 {
+    0% {
+      transform: scale(0.75);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+  
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+  
+    100% {
+      transform: scale(0.75);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+
+  /* Main Styles */
+  /* Main Box */
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  /* Highlight the currently playing song */
+.active-song {
+  background-color: rgba(52, 34, 216, 0.8); /* Highlight color (you can customize it) */
+  border: 2px solid #000000; /* Optional border for emphasis */
+}
+
+  /* box1 , box2, box3 */
+.box1 {
+    background-color: #1d1d1d;
+    border-radius: 1%;
+    height: 80vh;
+    padding: 1vh;
+    width: 22%; /* Optional: set a specific width */
+}
+.box2 {
+    display: flex;
+    position: absolute;
+    background-color: #1d1d1d; /* Main background color */
+    background: 
+      radial-gradient(circle, rgba(52, 34, 216, 0.8) 0%, rgba(29, 185, 84, 0) 90%), /* Radial gradient */
+      #1d1d1d; /* Fallback background color */
+    border-radius: 1%;
+    height: 80vh;
+    padding: 1vh;
+    width: 52%; /* Width after removing the duplicate width property */
+    margin: 1vw;
+    z-index: 5;
+    top: 3.8%;
+    right: 22.7%;
+  }
+
+  /* Container for the video */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Set a max width to control the size */
+  margin: 20px auto; /* Center the video horizontally */
+  border-radius: 15px; /* Rounded corners for a sleek look */
+  overflow: hidden; /* Hide any overflowing content */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  background-color: #000; /* Background color behind the iframe */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Style for the iframe */
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px; /* Rounded corners on the iframe */
+}
+
+/* Hover effect for the video container */
+.video-container:hover {
+  transform: scale(1.05); /* Slightly zoom in on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+}
+
+/* Optional play button style in video container */
+.video-container::before {
+  content: "▶"; /* Play button symbol */
+  font-size: 50px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease; /* Smooth fade-in */
+}
+
+/* Show play button on hover */
+.video-container:hover::before {
+  opacity: 1; /* Show the play button when hovered */
+}
+  .box3 {
+    display: flex;
+    position: absolute;
+    background-color: #1d1d1d;
+    border-radius: 1%;
+    height: 80vh;
+    padding: 1vh;
+    width: 22%; /* Optional: set a specific width */
+    right: 0.3%;
+}
+
+/* footer Styles */
+/* Music Bar */
+footer {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.music-player-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ddd; /* Lighter text color */
+    padding: 10px 20px; /* Adjusted padding to fit the 10% height */
+    position: relative; /* Ensures it stays at the bottom */
+    bottom: 1vh;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to ensure it's centered */
+    height: 10vh; /* 10% of the viewport height */
+    width: 90%; /* Adjust the width */
+    z-index: 100;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3); /* Slight shadow for an old-school frame */
+    font-family: 'Courier New', Courier, monospace; /* Retro font */
+}
+
+/* Track Info */
+.track-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.album-art {
+    display: flex;
+    position: absolute;
+    left: -2%;
+    bottom: 6.5vh;
+}
+
+.album-art img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px; /* Soft rounded edges for a retro feel */
+    margin-right: 15px;
+    border: 2px solid #ccc; /* Subtle border around album art */
+}
+
+.track-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name {
+    display: flex;
+    left: -95%;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+
+.artist-name {
+    display: flex;
+    left: -95%;
+    font-size: 14px;
+    color: #bbb; /* Faded text color for artist name */
+    margin-top: 4px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.control-button {
+    display: flex;
+    position: relative;
+    left: -2%;
+    bottom: 6vh;
+    background: grey;
+    color: #ccc;
+    font-size: 20px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+#control-button {
+    display: flex;
+    position: relative;
+    bottom: 8vh;
+    left: -6%;
+    background: none;
+    border: 1px solid #888; /* Soft borders around buttons */
+    color: #ccc;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 15px;
+    border-radius: 5px; /* Rounded button edges */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.control-button:hover {
+    background-color: #444; /* Slight hover effect */
+}
+
+.control-button:active {
+    background-color: #333; /* Active effect for buttons */
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.progress-range {
+    display: flex;
+    position: relative;
+    bottom: 6vh;
+    width: 100%;
+    height: 6px;
+    background-color: #555; /* Muted background for progress bar */
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+}
+
+.progress-range::-webkit-slider-runnable-track {
+    background: #555; /* Track background */
+    border-radius: 3px;
+}
+
+.progress-range::-webkit-slider-thumb {
+    background: #ccc; /* Thumb color */
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.time-info {
+    display: flex;
+    position: relative;
+    bottom: 5.8vh;
+    font-size: 12px;
+    color: #bbb; /* Faded text for time */
+    margin-left: 10px;
+}
+
+/* Volume Control */
+.volume-control {
+    display: flex;
+    position: relative;
+    left: 16%;
+    bottom: 7.3vh;
+    align-items: center;
+    width: 90%;
+    margin-top: 10px;
+}
+
+.volume-range {
+    display: flex;
+    position: relative;
+    left: -7%;
+    bottom: 6.6vh;
+    width: 120px;
+    margin-left: 10px;
+    background-color: #777; /* Muted color for volume range */
+    height: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.volume-range::-webkit-slider-runnable-track {
+    background-color: #777;
+    border-radius: 3px;
+}
+
+.volume-range::-webkit-slider-thumb {
+    background-color: #ccc; /* Volume thumb color */
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 600px) {
+    .music-player-footer {
+        padding: 10px;
+    }
+    .track-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .controls {
+        margin-top: 10px;
+    }
+    .control-button {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+}
+
+/* box 1 Songs list */
+/* Sidebar container */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 95%;
+    padding-top: 20px;
+}
+
+/* Each song item */
+.song-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #282828;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for each song item */
+.song-item:hover {
+    background-color: #333333;
+}
+
+/* Album cover image */
+.album-cover {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+/* Song details container */
+.song-details {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Song name styles */
+.song-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Artist name styles */
+.artist-name2 {
+    display: flex;
+    font-size: 12px;
+    color: #a1a1a1;
+    margin: 0;
+    left: 0%;
+}
+

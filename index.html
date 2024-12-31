@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Colify</title>
+</head>
+<body>
+    <header>
+
+        <img class="logo" src="pics/logo.png"></a>
+
+        <label class="label">
+            <div class="shortcut">⌘K</div>
+            <input type="text" class="search_bar" placeholder="Search for something..." />
+        </label>
+
+        <button type="button" class="btn">
+            <strong>Profile</strong>
+            <div id="container-stars">
+              <div id="stars"></div>
+            </div>
+          
+            <div id="glow">
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+          </button>
+
+    </header>
+
+    <main class="container">
+
+        <div class="box1">
+            <div class="sidebar">
+                <div class="song-item" data-audio="audio/song1.mp3">
+                    <img class="album-cover" src="pics/NFtherapysession.jpg" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">Real</p>
+                        <p class="artist-name2">NF</p>
+                    </div>
+                </div>
+                <div class="song-item" data="music/NFbreathe.mp3">
+                    <img class="album-cover" src="pics/NFtherapysession.jpg" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">Breathe</p>
+                        <p class="artist-name2">NF</p>
+                    </div>
+                </div>
+                <div class="song-item" data-audio="music/NFhowcouldyouleaveus.mp3">
+                    <img class="album-cover" src="pics/NFtherapysession.jpg" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">How Could You Leave Us</p>
+                        <p class="artist-name2">NF</p>
+                    </div>
+                </div>
+                <div class="song-item" data-audio="audio/song4.mp3">
+                    <img class="album-cover" src="pics/NFperception.jpg" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">If You Want love</p>
+                        <p class="artist-name2">NF</p>
+                    </div>
+                </div>
+                <div class="song-item" data-audio="audio/song5.mp3">
+                    <img class="album-cover" src="pics/NFperception.jpg" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">Let You Down</p>
+                        <p class="artist-name2">NF</p>
+                    </div>
+                </div>
+                <div class="song-item" data-audio="audio/song6.mp3">
+                    <img class="album-cover" src="pics/Sleepymelatonin.png" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">Melatonin</p>
+                        <p class="artist-name2">Sleepy Hollow</p>
+                    </div>
+                </div>
+                <div class="song-item" data-audio="audio/song7.mp3">
+                    <img class="album-cover" src="pics/Neffexasyoufadeaway.jpg" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">As You Fade Away</p>
+                        <p class="artist-name2">NEFFEX</p>
+                    </div>
+                </div>
+                <div class="song-item" data-audio="audio/song8.mp3">
+                    <img class="album-cover" src="pics/Slushiipastlives.jpg" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">Past Lives</p>
+                        <p class="artist-name2">Slushii</p>
+                    </div>
+                </div>
+                <div class="song-item" data-audio="audio/song9.mp3">
+                    <img class="album-cover" src="pics/JaeyBxrd2017.jpg" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">2017</p>
+                        <p class="artist-name2">Jaey Bxrd</p>
+                    </div>
+                </div>
+                <div class="song-item" data-audio="audio/song10.mp3">
+                    <img class="album-cover" src="pics/Iannemotions.jpg" alt="Album Cover">
+                    <div class="song-details">
+                        <p class="song-name">Emotions</p>
+                        <p class="artist-name2">Iann Dior</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="video-container">
+                <!-- YouTube Video will be dynamically loaded here -->
+                <i<iframe id="youtube-video" width="1266" height="712" src="https://www.youtube.com/embed/MDWSqeBodEg" title="Real- NF Lyrics" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="box3"></div>
+
+    </main>
+
+    <footer>
+        <div class="music-player-footer">
+            <div class="track-info">
+                <div class="album-art">
+                    <img id="footer-album-art" src="https://via.placeholder.com/40" alt="Album Art">
+                </div>
+                <div class="track-details">
+                    <p id="footer-track-name" class="track-name">Song Name</p>
+                    <p id="footer-artist-name" class="artist-name">Artist Name</p>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="control-button" id="prev-btn">⏮️</button>
+                <button class="control-button" id="play-pause-btn">⏯️</button>
+                <button class="control-button" id="next-btn">⏭️</button>
+            </div>
+        
+            <div class="progress-bar">
+                <input type="range" id="progress" class="progress-range" value="0" max="100">
+                <div class="time-info">
+                    <span id="current-time">0:00</span>/<span id="total-time">3:30</span>
+                </div>
+            </div>
+        
+            <div class="volume-control">
+                <button id="control-button">🔊</button>
+                <input type="range" id="volume" class="volume-range" value="80" max="100">
+            </div>
+    
+            <!-- Audio player element -->
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
